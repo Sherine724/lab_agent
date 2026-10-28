@@ -1,0 +1,21 @@
+
+{
+  // 本项目的 Python 解释器：backend 下的 conda 环境
+  "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/python.exe",
+
+  // 集成终端的环境变量修正
+  //
+  // 1) PYTHONPATH 设为 null = 从环境中删除该变量。
+  //    用户级环境变量 PYTHONPATH=D:\PythonPackages 会让 D:\PythonPackages
+  //    排在 sys.path 最前面，把虚拟环境里的包全部遮蔽掉。
+  //    注意：不能写成 ""，空字符串会让当前目录进入 sys.path，更危险。
+  //
+  // 2) PIP_CONFIG_FILE 指向项目内的 pip.ini，绕开全局配置里的
+  //    target = D:/PythonPackages，让 pip install 装进虚拟环境本身。
+  "terminal.integrated.env.windows": {
+    "PYTHONPATH": null,
+    "PIP_CONFIG_FILE": "${workspaceFolder}/.pip/pip.ini"
+  },
+  "python-envs.defaultEnvManager": "ms-python.python:conda",
+  "python-envs.defaultPackageManager": "ms-python.python:conda"
+}

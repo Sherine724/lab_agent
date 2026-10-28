@@ -1,0 +1,27 @@
+# ---- Python ----
+backend/.venv/
+__pycache__/
+*.pyc
+
+# ---- 环境变量与密钥（含数据库密码、JWT密钥，严禁提交）----
+backend/.env
+.env
+.env.local
+
+# ---- 运行时上传文件（backend 启动时会自动重建该目录）----
+backend/uploads/
+
+# ---- Node ----
+node_modules/
+frontend/dist/
+*.log
+
+# ---- 系统/编辑器 ----
+.DS_Store
+Thumbs.db
+
+# ---- 根目录的无关零散文件（本地保留，不入库）----
+/01.jpg
+/pelican_bike/
+/package.json
+/package-lock.json
